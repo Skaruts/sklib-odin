@@ -1,0 +1,45 @@
+
+********************************************************************************
+			TODO
+--------------------------------------------------------------------------------
+- rendering
+	. fix shader rendering
+	. improve quad rendering with custom batches or something
+
+
+- memory clean up
+	. fovmaps / circle masks still leaking
+	. font texture needs to be unloaded
+		- double-check all images too
+		- note: fonts should NOT be destroyed by consoles
+
+
+- conventions
+	. maybe use 'thing_new' instead of 'new_thing'
+
+
+- input
+	. (fixed?) action release sometimes gets triggered twice
+	. add mouse/gamepad support
+	. maybe key timers should be unified?
+	. input-blocking loop
+
+
+- consoles
+	. move console files into a module? (probably hard to do)
+	. console cell size override isn't accounted for in many places yet
+
+
+
+- fov
+- cellmaps
+- map generation
+- pathfinding
+- image blitting to consoles
+- rexpaint loader
+
+
+
+
+
+
