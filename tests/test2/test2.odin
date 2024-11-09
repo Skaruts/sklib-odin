@@ -30,7 +30,7 @@ fill_console :: proc(c:sl.Console, col:=rl.WHITE) {
 }
 
 
-on_init :: proc() {
+init :: proc() {
 	scale := 1
 	GW := 80 * scale
 	GH := 50 * scale
@@ -43,11 +43,11 @@ on_init :: proc() {
 	sl.console_set_cell(console, 5, 5, '@', rl.GOLD, rl.BLACK)
 }
 
-on_input :: proc() {
+input :: proc() {
 
 }
 
-on_update :: proc(dt:f32) {
+update :: proc(dt:f32) {
 	fill_console(console, rl.Color{0, 255, 0, 255})
 
 	sl.console_set_cell(console, 5, 5, '@', rl.GOLD, rl.BLACK)
@@ -59,7 +59,7 @@ on_update :: proc(dt:f32) {
 	// sl.quick_benchmark_stop("update")
 }
 
-on_render :: proc() {
+render :: proc() {
 	sl.quick_benchmark_start("render")
 
 		sl.console_render(console)
@@ -79,7 +79,7 @@ on_render :: proc() {
 
 // }
 
-on_quit :: proc() {
+quit :: proc() {
 
 }
 
