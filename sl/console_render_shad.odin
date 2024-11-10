@@ -33,14 +33,14 @@ _console_init_shader_rendering :: proc(c:^Console) {
 	c._fg_tex  = rl.LoadTextureFromImage(c._fg_img)
 	c._chr_tex = rl.LoadTextureFromImage(c._chr_img)
 
-	// rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "grid_size"), &c._grid_size, .VEC2, 1)
-	// rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "font_size"), &c._font_size, .VEC2, 1)
-	// rl.SetShaderValue(c._shader, _shader_loc(c._shader, "cw"), &CW, .FLOAT)
-	// rl.SetShaderValue(c._shader, _shader_loc(c._shader, "ch"), &CH, .FLOAT)
-	// rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "font"), c.font.texture)
-	// rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "bg_tex"),  c._bg_tex)
-	// rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "fg_tex"),  c._fg_tex)
-	// rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "chr_tex"), c._chr_tex)
+	rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "console_size"), &c._grid_size, .VEC2, 1)
+	rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "font_sizet"), &c._font_size, .VEC2, 1)
+	rl.SetShaderValue(c._shader, _shader_loc(c._shader, "cw"), &CW, .FLOAT)
+	rl.SetShaderValue(c._shader, _shader_loc(c._shader, "ch"), &CH, .FLOAT)
+	rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "font"), c.font.texture)
+	rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "bg_tex"),  c._bg_tex)
+	rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "fg_tex"),  c._fg_tex)
+	rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "chr_tex"), c._chr_tex)
 	// print("------------------------")
 }
 
@@ -86,8 +86,8 @@ _console_render_shader :: proc(c:^Console) {
 
 	rl.BeginShaderMode(c._shader)
 
-		rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "grid_size"), &c._grid_size, .VEC2, 1)
-		rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "font_size"), &c._font_size, .VEC2, 1)
+		rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "console_size"), &c._grid_size, .VEC2, 1)
+		rl.SetShaderValueV(c._shader, _shader_loc(c._shader, "font_sizet"), &c._font_size, .VEC2, 1)
 		rl.SetShaderValue(c._shader, _shader_loc(c._shader, "cw"), &c.font.cw, .FLOAT)
 		rl.SetShaderValue(c._shader, _shader_loc(c._shader, "ch"), &c.font.ch, .FLOAT)
 		rl.SetShaderValueTexture(c._shader, _shader_loc(c._shader, "font"), c.font.texture)

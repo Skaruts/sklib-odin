@@ -92,9 +92,6 @@ Console :: struct {
 		_font_layout = _internal.font_layouts[font.layout],
 
 		_render_type = render_type,
-		// _render_type = RenderType.QuadRender,
-		// _render_type = RenderType.TextureRender,
-		// _render_type = RenderType.ShaderRender,
 	}
 
 	c._new_cells = Cells {

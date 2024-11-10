@@ -29,7 +29,9 @@ import rl "vendor:raylib"
 	rl_log_level = .WARNING,
 	default_font_layout_name = "cp437",
 	target_fps = 60,
-	default_render_type = .TextureRender,
+	// default_render_type = .TextureRender,
+	// default_render_type = .QuadRender,
+	default_render_type = .ShaderRender,
 }
 
 @private _new_console :: proc { _new_console_wo_render_type, _new_console_impl }
