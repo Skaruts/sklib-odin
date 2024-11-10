@@ -67,8 +67,8 @@ _console_update_shader_rendering :: proc(c:^Console) {
 				// glyph value encoded in two color channels
 				// TODO: might be worth considering other color formats for this?
 				r := u8(math.min(255, ng))
-				g := u8(math.max(0, (ng-255)))
-				rl.ImageDrawPixel(&c._chr_img, i, j, {r, g, 0, 0})
+				g := u8(math.max(0, (int(ng)-255)))
+				rl.ImageDrawPixel(&c._chr_img, i, j, {r, g, 0, 255})
 				c._old_cells.glyphs[idx] = ng
 			}
 		}
