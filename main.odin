@@ -6,7 +6,8 @@ import rl "vendor:raylib"
 
 /* Choose the project to run */
 
-import game "tests/basic_game"
+// import game "tests/basic_game"
+import game "tests/game_of_life"
 // import game "tests/logger_tests"
 // import game "tests/rune_tests"
 // import game "tests/stress_tests"

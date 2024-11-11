@@ -5,9 +5,6 @@ import rl "vendor:raylib"
 import "../../sl"
 
 
-// NOTE: choice of colors is temporarily weird due to console rendering tests
-
-
 print :: fmt.println
 
 GW :: 80
