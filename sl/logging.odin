@@ -305,7 +305,7 @@ import "core:path/filepath"
 /*******************************************************************************
 	Procs that automatically use the internal logger, for intenal usage only.
 */
-@private __PRINT      :: proc(msg:string, args: ..any, loc := #caller_location) { _logger_print_impl(logger=_internal.logger, args=args, loc=loc) }
+@private __PRINT      :: proc(args: ..any, loc := #caller_location) { _logger_print_impl(logger=_internal.logger, args=args, loc=loc) }
 @private __PRINTF     :: proc(msg:string, args: ..any, loc := #caller_location) { _logger_printf_impl(logger=_internal.logger, msg=msg, args=args, loc=loc) }
 @private __INFO       :: proc(msg:string, args: ..any, loc := #caller_location) { _logger_info_impl(logger=_internal.logger, msg=msg, args=args, loc=loc) }
 @private __TASK       :: proc(msg:string, args: ..any, loc := #caller_location) { _logger_task_impl(logger=_internal.logger, msg=msg, args=args, loc=loc) }
