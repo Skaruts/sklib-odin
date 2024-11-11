@@ -128,7 +128,7 @@ import rl "vendor:raylib"
 		intrinsics.type_is_numeric(TA),
 		intrinsics.type_is_numeric(TB),
 		intrinsics.type_is_numeric(TC) {
-	return rl.Color{u8(r), u8(g), u8(b), u8(a)}
+	return rl.Color{u8(r), u8(g), u8(b), 255}
 }
 
 @private _color :: proc { _color4, _color3 }
