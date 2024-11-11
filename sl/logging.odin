@@ -136,12 +136,12 @@ import "core:path/filepath"
 	switch type {
 		case LogType.Print:      return strings.concatenate({loc_str, ": "}, context.temp_allocator)
 		case LogType.Printf:     return strings.concatenate({loc_str, ": "}, context.temp_allocator)
-		case LogType.Info:       return strings.concatenate({"    ", b1, p, "INFO",       b2, " ", loc_str}, context.temp_allocator)
-		case LogType.Task:       return strings.concatenate({"  > ", b1, p, "TASK",       b2, " ", loc_str}, context.temp_allocator)
-		case LogType.Reminder:   return strings.concatenate({"  * ", b1, p, "REMINDER",   b2, " ", loc_str}, context.temp_allocator)
-		case LogType.Deprecated: return strings.concatenate({"    ", b1, p, "DEPRECATED", b2, " ", loc_str}, context.temp_allocator)
-		case LogType.Warning:    return strings.concatenate({" ** ", b1, p, "WARNING",    b2, " ", loc_str}, context.temp_allocator)
-		case LogType.Error:      return strings.concatenate({" ## ", b1, p, "ERROR",      b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Info:       return strings.concatenate({"  ", b1, p, "INFO",       b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Task:       return strings.concatenate({"  ", b1, p, "TASK",       b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Reminder:   return strings.concatenate({"  ", b1, p, "REMINDER",   b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Deprecated: return strings.concatenate({"  ", b1, p, "DEPRECATED", b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Warning:    return strings.concatenate({"  ", b1, p, "WARNING",    b2, " ", loc_str}, context.temp_allocator)
+		case LogType.Error:      return strings.concatenate({"  ", b1, p, "ERROR",      b2, " ", loc_str}, context.temp_allocator)
 	}
 	return ""
 }
