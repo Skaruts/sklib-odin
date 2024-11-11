@@ -3,7 +3,6 @@
 			TODO
 --------------------------------------------------------------------------------
 - rendering
-	. fix shader rendering
 	. improve quad rendering with custom batches or something
 
 
@@ -28,7 +27,7 @@
 - consoles
 	. move console files into a module? (probably hard to do)
 	. console cell size override isn't accounted for in many places yet
-
+	. remove asserts for when console cell size override is zero. It's should be able to be set to zero, for no override.
 
 
 - fov

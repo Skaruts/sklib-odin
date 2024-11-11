@@ -108,10 +108,10 @@ Console :: struct {
 
 	if _cw, ok := cw.?; ok do c._cw = _cw
 	else                   do c._cw = c.font.cw
-	assert(c._cw > 0, "Console cell width must be greater than zero")
+	assert(c._cw > 0, "Console cell width override must be greater than zero")
 	if _ch, ok := ch.?; ok do c._ch = _ch
 	else                   do c._ch = c.font.ch
-	assert(c._ch > 0, "Console cell height must be greater than zero")
+	assert(c._ch > 0, "Console cell height override must be greater than zero")
 
 	switch c._render_type {
 		case .QuadRender:    _console_init_quads(&c)
@@ -119,7 +119,13 @@ Console :: struct {
 		case .ShaderRender:  _console_init_shader_rendering(&c)
 	}
 
-	console_clear(c)  // not sure this is needed
+	// make sure old_cells are different from new_cells
+	for i in 0..<c.w*c.h {
+		c._old_cells.glyphs[i] = 255
+		c._old_cells.fgs[i] = rl.PINK
+		c._old_cells.bgs[i] = rl.PINK
+	}
+	console_clear(c)
 
 	return c
 }
