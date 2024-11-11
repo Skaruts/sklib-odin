@@ -14,7 +14,7 @@ _shader_loc :: proc(shader:rl.Shader, property:cstring) -> rl.ShaderLocationInde
 	return rl.ShaderLocationIndex(rl.GetShaderLocation(shader, property))
 }
 _console_init_shader_rendering :: proc(c:^Console) {
-	CW, CH := c._cw, c._ch
+	CW, CH := _console_get_cell_size(c^)
 
 	c._shader = rl.LoadShader(nil, "sl/console_shader.fs");
 

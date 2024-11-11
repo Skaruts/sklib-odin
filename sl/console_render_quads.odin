@@ -18,7 +18,7 @@ BG_GLYPH :: 219
 	c._quads.bg = make([]Vertex, (c.w * c.h) * 4) // reset sequences if they have anything already
 	c._quads.fg = make([]Vertex, (c.w * c.h) * 4)
 
-	CW, CH := c._cw, c._ch
+	CW, CH := _console_get_cell_size(c^)
 
 	COLS := int(c.font.cols)      // font width, in tiles
 	UVS : f32 = 1.0/f32(COLS)   // UV size  - TODO: should account for different width and height (UVW, UVH)
@@ -76,7 +76,7 @@ BG_GLYPH :: 219
 	// fmt.println("_console_update_quads")
 	// quick_benchmark_start("update_quads")
 
-	CW, CH := c._cw, c._ch
+	CW, CH := _console_get_cell_size(c^)
 	COLS := int(c.font.cols)      // font width, in tiles
 	UVS := 1.0/f32(COLS)           // UV size  - TODO: should account for different width and height (UVW, UVH)
 
@@ -143,7 +143,7 @@ BG_GLYPH :: 219
 			https://www.raylib.com/examples/text/loader.html?name=text_draw_3d
 	*/
 
-	CW, CH := c._cw, c._ch
+	CW, CH := _console_get_cell_size(c^)
 
 	// quick_benchmark_start("update_quads")
 
