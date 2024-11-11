@@ -164,3 +164,12 @@ console_print :: proc(c:Console, x, y:int, text:string, fg:rl.Color, bg:rl.Color
 		_set_bg(c, idx, bg)
 	}
 }
+
+
+console_get_mouse_position :: proc(c:Console) -> rl.Vector2 {
+	CW, CH := _console_get_cell_size(c)
+	mouse_pos := _get_mouse_position()
+	return vec2_floored((mouse_pos - vec2(c.x * CW, c.y * CH)) / vec2(CW, CH))
+}
+
+

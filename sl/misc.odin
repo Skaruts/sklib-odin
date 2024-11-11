@@ -8,6 +8,7 @@
 package sl
 
 import "core:fmt"
+import "core:math"
 import "core:intrinsics"
 import rl "vendor:raylib"
 
@@ -32,6 +33,10 @@ import rl "vendor:raylib"
 
 @private _vec2 :: proc { _vec2_xy, _vec2_0 }
 
+
+@private _vec2_floored :: proc(v: rl.Vector2) -> rl.Vector2 {
+	return vec2(math.floor(v.x), math.floor(v.y))
+}
 
 
 /*******************************************************************************

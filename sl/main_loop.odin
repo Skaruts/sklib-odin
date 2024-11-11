@@ -190,4 +190,6 @@ import "utils"
 	return _internal.dt
 }
 
-
+@private _get_mouse_position :: proc() -> rl.Vector2 {
+	return rl.GetMousePosition()
+}

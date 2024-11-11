@@ -22,7 +22,7 @@ set_raylib_log_level  :: proc { _set_raylib_log_level }
 get_delta_time        :: proc { _get_delta_time }
 window_set_title      :: proc { _window_set_title }
 window_set_target_fps :: proc { _window_set_target_fps }
-
+get_mouse_position    :: _get_mouse_position  // TODO: this seems redundant
 
 
 /*******************************************************************************
@@ -100,6 +100,7 @@ print2d        :: utils.print2d
 		misc.odin
 */
 vec2           :: _vec2
+vec2_floored   :: _vec2_floored
 rect           :: _rect
 randi          :: _randi
 randf          :: _randf
