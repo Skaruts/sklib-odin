@@ -168,6 +168,8 @@ import "utils"
     mon_size := rl.Vector2{f32(rl.GetMonitorWidth(0)), f32(rl.GetMonitorHeight(0))}
     win_size := rl.Vector2{f32(c.w*CW), f32(c.h*CH)}
     pos := (mon_size - win_size) / 2
+    if win_size.x > mon_size.x do pos.x = 0
+    if win_size.y > mon_size.y do pos.y = 0
 
     // set position first to avoid occasional weird effects
     rl.SetWindowPosition(i32(pos.x), i32(pos.y))
